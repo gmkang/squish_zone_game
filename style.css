@@ -1,0 +1,135 @@
+body#front_page {
+	background-color: white;
+	font-family: 'Chewy', cursive;
+	color: #AD1313;
+	font-size: 40px;
+	text-align: center;
+	margin: 0;
+	background-image: none;
+
+}
+
+a.button {
+	font-size: 20px;
+	font-family: 'Caveat Brush', cursive;
+	border: 2px solid yellow;
+	border-radius: 10%;
+	color: orange;
+	text-decoration: none;
+	margin: 0;
+}
+
+body, html {
+	width: 100%;
+	height: 100%;
+	background: url("background_image.jpg") no-repeat;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	margin: 0;
+	image-rendering: crisp-edges;
+	cursor: pointer;
+	/*cursor: url('fly_swatter1.png'),url(http://www.javascriptkit.com/dhtmltutors/cursor-hand.gif), default;*/
+	overflow: hidden;
+	font-family: 'Boogaloo', cursive;
+}
+
+.ants {
+	background-image: url('ant2.gif');
+	position: absolute;
+	width: 240px;
+	height: 135px;
+	margin: auto;
+	transition: all 1s ease-out;
+	transition-timing-function: linear;
+	top: 600px;
+	cursor: url('fly_swatter.png'), auto;
+
+}
+
+.flies {
+	background-image: url('fly1.gif');
+	position: absolute;
+	width: 77px;
+	height: 75px;
+	margin: auto;
+	transition: all 5s ease;
+	transition-timing-function: linear;
+	/*animation: fly-flip 5s click;*/
+	}
+
+img[src$='.gif'] {
+	image-rendering: crisp-edges;
+}
+
+h2 {
+	font-size: 48px;
+	text-align: center;
+
+}
+
+.splat {
+	background-image: url('splat.png');
+	background-position: center;
+	transition: 0.5s ease;
+	width: 120px;
+	height: 120px;
+	margin-top: -100px;
+	margin-left: -100px;
+	opacity: 0.5;
+}
+
+.squished {
+	background-image: url('blood.png');
+	background-position: center;
+	transition: 1s ease;
+	width: 109px;
+	height: 146px;
+}
+
+#bugSpray {
+	background-image: url('bug_spray.png');
+}
+
+#scoreboard {
+	font-size: 42px;
+	text-align: right;
+	width: 200px;
+	height: 100px;
+	position: absolute;
+	top: 92%;
+	left: 82.5%;
+	margin: auto;
+	
+}
+
+#bugspray {
+	top: 90%;
+	left: 82.5%;
+	position: absolute;
+	width: 18px;
+	height: 52 px;
+}
+/*.flip {
+	transform: rotate(90deg);
+	transition: margin-bottom 1s ease;
+}*/
+/*@keyframes fly-flip {
+		0% {
+			rotate: 0deg;
+	}
+		100% {
+			rotate: 90deg;
+	}
+}		*/
+
+
+
+
+
+
+
+
+
+
+
