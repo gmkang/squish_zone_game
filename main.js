@@ -10,6 +10,7 @@ $(function() {
     var timeLeft = 45;
     var score = 0;
 
+//createAnt while attaching their data interval 
 
     function createAnt() {
 
@@ -34,6 +35,7 @@ $(function() {
     createAnt();
 
 
+//createFly while attaching their data interval
 
     function createFly() {
 
@@ -58,10 +60,14 @@ $(function() {
     }
     createFly();
 
+//created multiple starter bugs
+
     for (var i = 0; i < 7; i++) {
         createAnt();
         createFly();
     }
+
+//countdown timer
 
     var timerId = setInterval(startTimer, 1000);
 
@@ -85,6 +91,7 @@ $(function() {
     startTimer();
 
 
+//track score, clear data interval and switch classes
 
     function squishFlies(event) {
 
@@ -123,6 +130,7 @@ $(function() {
 
     }
 
+//Timed swarm of bugs
 
     setInterval(bugSwarm, 25000);
 
@@ -134,6 +142,7 @@ $(function() {
         }
     }
 
+//render the current score and if there is a prize available then print
 
     function scoreboard() {
 
@@ -146,6 +155,7 @@ $(function() {
     scoreboard();
 
 
+//attach image to the body if gamer has enough points
 
     function bugSpray() {
 
@@ -158,6 +168,7 @@ $(function() {
     bugSpray();
 
 
+//using keydown activate event listeners
 
     function activateBugSpray() {
 
@@ -182,6 +193,7 @@ $(function() {
 
     document.onkeypress = activateBugSpray;
 
+//bugspray animation
 
     function animateSpray(event) {
         var spray = document.createElement('div');
@@ -201,6 +213,7 @@ $(function() {
         spray.style.opacity = 0;
     }
 
+//checking for a winner
 
     function checkWinner() {
 
