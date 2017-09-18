@@ -10,7 +10,7 @@
 
 # How To Play
 - Quickly click on the little critters to terminate them as fast you can before the swarm of bugs roll through. 
-- Accumulate a 150 points and receive a deathly can of bug spray! Once you see a can of "Buzz Off" spray at the bottom right hand corner of your screen, the potent concotion will be available for use. Activate the bug spray with a simple spacebar press and mouseover the invaders to teach them a lesson. 
+- Accumulate 150 points and receive a deathly can of bug spray! Once you see a can of "Buzz Off" spray at the bottom right hand corner of your screen, the potent concotion will be available for use. Activate the bug spray with a simple spacebar press and mouseover the invaders to teach them a lesson. 
 - The goal is to elimate all the bugs before the timer runs out. 
  	-Ants = 5 points 
 	-Flies = 10 points
