@@ -8,7 +8,6 @@ body, html {
 	margin: 0;
 	image-rendering: crisp-edges;
 	cursor: pointer;
-	/*cursor: url('fly_swatter1.png')*/
 	overflow: hidden;
 	font-family: 'Boogaloo', cursive;
 }
@@ -19,7 +18,7 @@ body, html {
 	width: 240px;
 	height: 135px;
 	margin: auto;
-	transition: all 0.5s ease-out;
+	transition: all 0.75s ease-out;
 	transition-timing-function: linear;
 	top: 600px;
 
@@ -33,7 +32,7 @@ body, html {
 	margin: auto;
 	transition: all 0.75s ease;
 	transition-timing-function: linear;
-	/*animation: fly-flip 5s click;*/
+
 	}
 
 img[src$='.gif'] {
@@ -49,7 +48,7 @@ h2 {
 .splat {
 	background-image: url('images/splat.png');
 	background-position: center;
-	transition: 0.5s ease;
+	transition: 0.25s ease;
 	width: 120px;
 	height: 120px;
 	margin-top: -100px;
@@ -59,7 +58,7 @@ h2 {
 .squished {
 	background-image: url('images/blood.png');
 	background-position: center;
-	transition: 0.5s ease;
+	transition: 0.25s ease;
 	width: 109px;
 	height: 146px;
 	margin-top: -100px;
@@ -86,41 +85,64 @@ h2 {
 	height: 124px;
 }
 
-/*.flies.splat {
-	top: -200px;
-	left: -200px;
-}
-
-.ants.squished {
-	top: -210px;
-	left: -210px;
-}*/
-/*.flip {
-	transform: rotate(90deg);
-	transition: margin-bottom 1s ease;
-}*/
-/*@keyframes fly-flip {
-		0% {
-			rotate: 0deg;
-	}
-		100% {
-			rotate: 90deg;
-	}
-}		*/
-
 .spray {
 	width: 10px;
 	height: 10px;
-	border: 1px solid white;
+	border: 2px solid white;
 	border-radius: 50%;
 	position: absolute;
 }
 
+@media only screen 
+	and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+
+	.ants {
+		width: 100%;
+		height: 100%;
+		top: 300px;
+	}
+
+	.flies {
+		width: 100%;
+		height: 100%;
+	}
+
+	h2{
+		font-size: 24px;
+	}
+
+	.splat {
+		width: 100%;
+		height: 100%;
+	}
+
+	.squished {
+		width: 100%;
+		height: 100%;
+	}
+
+	#scoreboard {
+		font-size: 21px;
+		width: 100px;
+		height: 50px;
+	}
+
+	#bugspray {
+		width: 100%;
+		height: 100%;
+	}
+
+	.spray {
+		width: 7px;
+		height: 7px;
+	}
 
 
 
 
-
+}
 
 
 

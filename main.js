@@ -1,17 +1,14 @@
 // var jq = 
 $(function() {
     console.log("JS OKAY!");
+    var bumblebee_music = new Audio('bumblebee.mp3');
+    	bumblebee_music.play();
 
     var body = $('body');
     var flies = $('.flies');
     var ants = $('.ants');
     var timeLeft = 45;
     var score = 0;
-
-
-  $('#instructions').click(function(){
-  	$('#drop_down').slideToggle('slow'); 
-  });
 
 
     function createAnt() {
@@ -24,16 +21,13 @@ $(function() {
         var intervalId = setInterval(function() {
             ant.css("left", Math.random() * window.innerWidth);
         }, 1500)
-
+        	ant.attr('data-interval', intervalId)
         // attach listener here!
         ant.click({ intervalId: intervalId }, squishAnts);
 
-        if (score >= 100) {
+        if (score >= 150) {
             ant.mouseover({ intervalId: intervalId }, squishAnts);
         }
-        // 	bugSpray();
-        // 	activateBugSpray();
-        // }
 
 
     }
@@ -53,18 +47,18 @@ $(function() {
             fly.css("top", Math.random() * window.innerHeight);
             fly.css("left", Math.random() * window.innerWidth);
         }, 300)
+        	fly.attr('data-interval', intervalId)
 
 
         fly.click({ intervalId: intervalId }, squishFlies);
-
-        if (score >= 100) {
+       
+        if (score >= 150) {
             fly.mouseover({ intervalId: intervalId }, squishFlies);
         }
-
     }
     createFly();
 
-    for (var i = 0; i < 4; i++) {
+    for (var i = 0; i < 7; i++) {
         createAnt();
         createFly();
     }
@@ -78,7 +72,7 @@ $(function() {
         if (timeLeft === 0) {
             setTimeout(function() {
                 alert('Time\'s Up! Better call a terminator!');
-            }, 1000);
+            }, 500);
             clearTimeout(timerId);
         } else {
             timer.innerHTML = `00:${timeLeft}`;
@@ -97,11 +91,10 @@ $(function() {
         score += 10;
         console.log(score);
         scoreboard();
-        
+
         var squish = event.currentTarget.classList;
         squish.add('splat');
-        console.log('in squishFlies. event.data:', event.data);
-        clearInterval(event.data.intervalId);
+        clearInterval(Number(event.target.getAttribute('data-interval')));
 
         setInterval(function() {
             squish.remove('flies');
@@ -120,7 +113,8 @@ $(function() {
 
         var squish = event.currentTarget.classList;
         squish.add('squished');
-        clearInterval(event.data.inervalId);
+        clearInterval(Number(event.target.getAttribute('data-interval')));
+
 
         setInterval(function() {
             squish.remove('ants');
@@ -130,45 +124,32 @@ $(function() {
     }
 
 
-
     setInterval(bugSwarm, 25000);
 
     function bugSwarm() {
 
-        for (var i = 0; i < 12; i++) {
+        for (var i = 0; i < 13; i++) {
             createAnt();
             createFly();
         }
     }
 
 
-    function stopBugSwarm() {
-        clearInterval(createAnt);
-        clearInterval(createFly);
-    }
-    setInterval(stopBugSwarm, 30000)
-
-
-
     function scoreboard() {
 
         var scoreboard = document.getElementById('scoreboard');
         scoreboard.innerHTML = `${score}pts.`
-        if (score >= 100) {
+        if (score >= 150) {
             bugSpray();
         }
     }
     scoreboard();
 
 
-    function removeBugSpray() {
-        clearInterval(activateBugSpray);
-    }
-
 
     function bugSpray() {
 
-        if (score >= 100) {
+        if (score >= 150) {
             var prize = $('<img src="images/prize1.png" id="bugspray">')
             body.append(prize);
             prize.show();
@@ -185,15 +166,9 @@ $(function() {
 
 
 
-            $('.flies').on("mouseleave", squishFlies);
-            setInterval(function(){
-            	remove(flies)
-            }, 1000)
-
+            $('.flies').on("mouseover", squishFlies);
             $('.ants').on("mouseover", squishAnts);
-            setInterval(function(){
-            	remove(ants)
-            }, 1000)
+            
 
             $('.flies').off("click", squishFlies);
             $('.ants').off("click", squishAnts);
@@ -229,13 +204,15 @@ $(function() {
 
     function checkWinner() {
 
-    		if(timeLeft > 0) {
-    			if($('.flies').length === 0 && $('.ants').length === 0) {
-    				alert('YAY! Your home is bug free!');
-    			} 
-    		}
-		}
-clearInterval(checkWinner);
+        if (timeLeft > 0) {
+            if ($('.flies').length === 0 && $('.ants').length === 0) {
+                alert('YAY! Your home is bug free!');
+                location.reload();
+            }
+        }
+
+    }
+    clearInterval(checkWinner);
 
 
 
