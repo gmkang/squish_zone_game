@@ -74,7 +74,7 @@ img {
 	height: 220px;
 	position: absolute;
 	border: 1px dashed orange;
-	padding-bottom: 250px;
+	padding-bottom: 240px;
 }
 
 
@@ -115,7 +115,7 @@ img {
 			left: 125px;
 			width: 105px;
 			height: 210px;
-			padding-bottom: 125px;
+			padding-bottom: 120px;
   	}
 
 }

@@ -77,7 +77,7 @@ $(function() {
 
         if (timeLeft === 0) {
             setTimeout(function() {
-                alert('Time\'s Up! Better call a terminator!');
+                alert('Time\'s up! Better call the exterminator!');
             }, 500);
             clearTimeout(timerId);
         } else {
@@ -196,6 +196,7 @@ $(function() {
 //bugspray animation
 
     function animateSpray(event) {
+
         var spray = document.createElement('div');
         spray.setAttribute('class', 'spray');
         document.body.appendChild(spray);
